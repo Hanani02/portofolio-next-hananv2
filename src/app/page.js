@@ -18,7 +18,7 @@ export default function Home() {
     <main className="mx-auto max-w-5xl px-4 py-10">
       <Hero
         nama="Muhammad Akbar Hanani"
-        tagline="Siswa kelas X SMK, calon Junior Web Developer di Kelas industri UBIG"
+        tagline="Siswa kelas XI SMK, calon Junior Web Developer di Kelas industri UBIG"
       />
       <section className="mt-10">
         <div className="grid gap-4">
