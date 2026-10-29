@@ -13,9 +13,9 @@ export const metadaata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="id" className="h-full antialiased">
-      <body className="min-h-full flex flex-col bg-latar text-gray-800">
-        <Navbar/>
-          {children}
+      <body className="min-h-full flex flex-col bg-latar dark:bg-gray-900 text-gray-800 dark:text-gray-100">
+        <Navbar />
+        {children}
         <Footer />
       </body>
     </html>

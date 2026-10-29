@@ -6,13 +6,13 @@ const daftarJadwal = [
 
 export default function Jadwal() {
     return (
-        <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm grid gap-4">
-            <h3 className="text-2xl text-utama font-bold">
+        <div className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-5 shadow-sm grid gap-4">
+            <h3 className="text-2xl text-utama dark:text-sky-200 font-bold">
                 Jadwal Belajar
             </h3>
 
             <div className="w-full">
-                <div className="grid grid-cols-12 pb-2 border-b border-gray-200 font-bold text-white text-sm md:text-base bg-utama p-2">
+                <div className="grid grid-cols-12 pb-2 border-b border-gray-200 dark:border-gray-700 font-bold text-white text-sm md:text-base bg-utama p-2">
                     <p className="col-span-3">Hari</p>
                     <p className="col-span-4">Waktu</p>
                     <p className="col-span-5">Kegiatan</p>
@@ -20,8 +20,8 @@ export default function Jadwal() {
 
                 <div className="divide-y divide-gray-100">
                     {daftarJadwal.map((item, index) => (
-                        <div key={index} className="grid grid-cols-12 py-3 text-sm text-gray-700 items-center">
-                            <p className="col-span-3 font-semibold text-gray-800">{item.hari}</p>
+                        <div key={index} className="grid grid-cols-12 py-3 text-sm text-gray-700 dark:text-gray-300 items-center">
+                            <p className="col-span-3 font-semibold text-gray-800 dark:text-gray-100">{item.hari}</p>
                             <p className="col-span-4">{item.waktu}</p>
                             <p className="col-span-5">{item.kegiatan}</p>
                         </div>

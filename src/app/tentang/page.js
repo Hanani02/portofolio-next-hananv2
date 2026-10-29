@@ -8,17 +8,17 @@ export const metadata = {
     desription: "Cerita, hobi, cita-cita, dan jadwal belajar Hanan"
 }
 
-export default function Tentang () {
+export default function Tentang() {
     return (
         <main className="mx-auto max-w-5xl px-4 py-10 grid gap-2">
-            <h1 className="text-3xl font-bold text-utama md:text-4xl">Tentang Saya</h1>
+            <h1 className="text-3xl font-bold text-utama dark:text-sky-200 md:text-4xl">Tentang Saya</h1>
             <div className="grid gap-4">
-                      <AboutCard/>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                      <HobiCard/>
-                      <CitaCard/>
-                      </div>
-                      <Jadwal/>
+                <AboutCard />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                    <HobiCard />
+                    <CitaCard />
+                </div>
+                <Jadwal />
             </div>
         </main>
     )
