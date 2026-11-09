@@ -1,20 +1,22 @@
 import Hero from '@/components/Hero';
 import SkillCard from '@/components/SkillCard';
 import ProyekCard from '@/components/ProyekCard';
-import { proyek } from '@/data/proyek';
+import { buttonVariants } from "@/components/ui/button";
+import { supabase } from "@/lib/supabase"
 import Link from 'next/link';
 
-const skills = [
-  { name: "HTML", level: "Menengah" },
-  { name: "CSS", level: "Menengah" },
-  { name: "GIT and GitHub", level: "Dasar" },
-  { name: "Desain poster dengan Canva", level: "Mahir" },
-  { name: "JavaScript", level: "dasar" },
-]
+export default async function Home() {
+  const { data: skills } = await supabase
+  .from("skills")
+  .select("*")
+  .order("id");
 
-const proyekTerbaru = proyek.slice(-3);
+  const { data: proyekTerbaru } = await supabase
+  .from("projects")
+  .select("*")
+  .order("created_at", { ascending: false })
+  .limit(3);
 
-export default function Home() {
   return (
     <main className="mx-auto max-w-5xl px-4 py-10">
       <Hero
@@ -23,26 +25,26 @@ export default function Home() {
       />
       <section className="mt-10">
         <div className="grid gap-4">
-          <div className="bg-white dark:bg-gray-800 rounded-xl gap-2 p-5">
-            <h2 className="mb-4 text-2xl font-bold text-utama dark:text-sky-200">
+          <div className="bg-card rounded-xl gap-2 p-5">
+            <h2 className="mb-4 text-2xl font-bold text-primary">
               Keahlian
             </h2>
             <div className="grid gap-4 md:grid-cols-3">
-              {skills.map((skill) => (
-                <SkillCard key={skill.name} name={skill.name} level={skill.level}
+              {skills?.map((skill) => (
+                <SkillCard key={skill.id || skill.nama} nama={skill.nama} level={skill.level}
                 />
               ))}
             </div>
           </div>
-          <div className="bg-white dark:bg-gray-800 rounded-xl gap-2 p-5">
-            <h2 className='mb-4 text-2xl font-bold text-utama dark:text-sky-200'>Proyek Terbaru</h2>
+          <div className="bg-card rounded-xl gap-2 p-5">
+            <h2 className='mb-4 text-2xl font-bold text-primary'>Proyek Terbaru</h2>
             <div className='grid gap-6 md:grid-cols-3'>
               {proyekTerbaru.map((item) => (
                 <ProyekCard key={item.slug} proyek={item} />
               ))}
             </div>
-            <Link href="/proyek" className="mt-6 inline-block rounded-lg bg-utama px-5 py-2 font-semibold text-white">
-              Lihat semua proyek
+            <Link href="/proyek" className={buttonVariants({ size: "lg", className: "mt-6" })}>
+            Lihat semua proyek
             </Link>
           </div>
         </div>

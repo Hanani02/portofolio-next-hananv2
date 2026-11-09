@@ -3,8 +3,8 @@ import Link from "next/link";
 export default function NotFound() {
     return (
         <main className="flex min-h-[70vh] flex-col items-center justify-center px-4 text-center">
-            <h1 className="text-6xl font-extrabold text-utama dark:text-sky-200">404</h1>
-            <p className="mt-3 text-xl font-semibold text-gray-700 dark:text-gray-300">
+            <h1 className="text-6xl font-extrabold text-primary">404</h1>
+            <p className="mt-3 text-xl font-semibold text-muted-foreground">
                 Halaman Tidak Ditemukan
             </p>
             <p className="mt-1 text-sm text-gray-500">

@@ -1,7 +1,9 @@
 'use client';
 
 import { useState } from "react";
-const kelasInput = "mt-1 w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 p-2";
+import { Button } from "@/components/ui/button"
+
+const kelasInput = "mt-1 w-full rounded-lg border border-input bg-card p-2";
 
 export default function FormKontak() {
     const [nama, setNama] = useState("");
@@ -54,7 +56,7 @@ export default function FormKontak() {
                     onChange={(e) => setNama(e.target.value)}
                     placeholder="Contoh: Angga Saputra"
                     className={kelasInput} />
-                {error.nama && <p className="mt-1 text-sm text-aksen dark:teks-red-300">{error.nama}</p>}
+                {error.nama && <p className="mt-1 text-sm text-aksen dark:text-red-300">{error.nama}</p>}
             </div>
             <div>
                 <label htmlFor="email" className="block font-semibold">
@@ -68,7 +70,7 @@ export default function FormKontak() {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Contoh: user@gmail.com"
                     className={kelasInput} />
-                {error.email && <p className="mt-1 text-sm text-aksen dark:teks-red-300">{error.email}</p>}
+                {error.email && <p className="mt-1 text-sm text-aksen dark:text-red-300">{error.email}</p>}
             </div>
             <div>
                 <label htmlFor="nohp" className="block font-semibold">
@@ -81,8 +83,8 @@ export default function FormKontak() {
                     value={hp}
                     onChange={(e) => setHp(e.target.value)}
                     placeholder="Contoh: +62 xxx-xxx-xxx"
-                    className={kelasInput}/>
-                    {error.hp && <p className="mt-1 text-sm text-aksen dark:teks-red-300">{error.hp}</p>}
+                    className={kelasInput} />
+                {error.hp && <p className="mt-1 text-sm text-aksen dark:text-red-300">{error.hp}</p>}
             </div>
             <div>
                 <label htmlFor="keperluan" className="block font-semibold">
@@ -100,7 +102,7 @@ export default function FormKontak() {
                     <option value="tanya" >Bertanya</option>
                     <option value="lainnya">Lainnya</option>
                 </select>
-                {error.keperluan && <p className="mt-1 text-sm text-aksen dark:teks-red-300">{error.keperluan}</p>}
+                {error.keperluan && <p className="mt-1 text-sm text-aksen dark:text-red-300">{error.keperluan}</p>}
             </div>
             <div>
                 <label htmlFor="pesan" className="block font-semibold">
@@ -113,15 +115,15 @@ export default function FormKontak() {
                     placeholder="Tulis pesanmu di sini"
                     className={kelasInput}
                 />
-                {error.pesan && <p className="mt-1 text-sm text-aksen dark:teks-red-300">{error.pesan}</p>}
+                {error.pesan && <p className="mt-1 text-sm text-aksen dark:text-red-300">{error.pesan}</p>}
             </div>
             <div>
-                <button
+                <Button
                     type="submit"
-                    className="bg-aksen hover:bg-red-800 text-white text-xs font-bold px-4 py-2.5 rounded-md transition duration-150"
+                    className="cursor-pointer"
                 >
                     Kirim Pesan
-                </button>
+                </Button>
             </div>
             {berhasil && (
                 <p className="rounded-lg bg-green-100 p-3 text-green-800 dark:bg-green-900 dark:text-green-100">
