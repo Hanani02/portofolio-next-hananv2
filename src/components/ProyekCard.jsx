@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardDescription, CardHeader, CardTitle } from
-"@/components/ui/card";
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+
 export default function ProyekCard({ proyek }) {
     const gambar = proyek.gambar_url || proyek.gambar || null;
 
